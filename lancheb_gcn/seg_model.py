@@ -377,7 +377,7 @@ class lancheb_gcn(base_model):
         dir_name: Name for directories (summaries and model parameters).
     """
 
-    def __init__(self, vertice, F, K, M, filter='lanczos5', brelu='b1relu', pool='mpool1',
+    def __init__(self, vertice, F, K, M, filter='lancheb', brelu='b1relu', pool='mpool1',
                  num_epochs=20, learning_rate=0.1, decay_rate=0.95, decay_steps=None, momentum=0.9,
                  regularization=0, dropout=0, batch_size=100, eval_frequency=200,
                  dir_name=''):
@@ -423,7 +423,7 @@ class lancheb_gcn(base_model):
         # Build the computational graph.
         self.build_graph(M_0)
 
-    def lanczos5(self, x, L, Fout, K):      # Implement Lanczos-Chebyshev hybrid filtering
+    def lancheb(self, x, L, Fout, K):      # Implement Lanczos-Chebyshev hybrid filtering
         eigenval, eigenvec = tf.linalg.eigh(L)  # Find the eigenvalues of the
                                                 # Laplacian matrix, function uses Lanczos
                                                 # Method
