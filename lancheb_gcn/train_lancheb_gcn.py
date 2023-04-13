@@ -58,7 +58,7 @@ def train():
     params['eval_frequency'] = 30       # Validate every 30 shapes
 
     # Building blocks.
-    params['filter'] = 'lanczos5'
+    params['filter'] = 'lancheb'
     params['brelu'] = 'b1relu'
     params['pool'] = 'apool1'
 
@@ -96,7 +96,7 @@ def test():
     params['eval_frequency'] = 30   # Validate every 30 shapes
 
     # Building blocks.
-    params['filter'] = 'lanczos5'
+    params['filter'] = 'lancheb'
     params['brelu'] = 'b1relu'
     params['pool'] = 'apool1'
 
